@@ -1,1 +1,1 @@
-web: gunicorn rep:client
+worker: python run.py
