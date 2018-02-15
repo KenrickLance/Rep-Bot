@@ -407,7 +407,7 @@ async def on_message(message):
 		except WrongUsage:
 			await client.send_message(message.channel, errorMessD['usagePlay'])
 		
-	print('({}) {} || {} \n || {}'.format(message.timestamp, message.author.name, message.content, message))
+	print('({}) {} || {}'.format(message.timestamp, message.author.name, message.content))
 
 client.run('MzkzODM1Nzg4NDAxNjM5NDM3.DUjfBw.3sF9G_zZpJaYPqDpKhUIAo0Ztow')
 
