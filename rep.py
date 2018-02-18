@@ -296,7 +296,7 @@ async def on_message(message):
 	if messageLower.startswith('!poll'):
 		try:
 			messL = message.content.split()
-			if not messL[1].lower().startswith('question:') or not messL[0] == '!poll':
+			if not messL[1].lower().startswith('question:') or not messL[0].lower() == '!poll':
 				raise WrongUsage
 			mess = message.content
 			if mess.find(f' {1}:') == -1:
@@ -400,7 +400,7 @@ async def on_message(message):
 			else:
 				try:
 					voice = await client.join_voice_channel(message.author.voice.voice_channel)
-				except ClientException:
+				except discord.errors.ClientException:
 					pass
 				player = await voice.create_ytdl_player(mess[1])
 				player.start()
